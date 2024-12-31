@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1.0, user-scalable=yes">
+    <title>Akın Karahasan - Space Network</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .guest-detail {
+            max-width: 1000px;
+            margin: 100px auto 50px;
+            padding: 2rem;
+        }
+
+        .guest-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .guest-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid rgba(107, 76, 140, 0.2);
+        }
+
+        .guest-title {
+            flex: 1;
+        }
+
+        .guest-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .guest-title p {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .guest-info {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(107, 76, 140, 0.2);
+            text-align: center;
+        }
+
+        .guest-info h2 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .guest-info p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .guest-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .guest-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .guest-links a:hover {
+            background: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            .guest-header {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 2.5rem;
+            }
+
+            .guest-image {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+
+            .guest-title h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .guest-title p {
+                text-align: center;
+            }
+
+            .guest-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .guest-info h2 {
+                text-align: center;
+            }
+
+            .guest-info p {
+                text-align: center;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <button class="hamburger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="logo">
+                <img src="../images/space-network.png" alt="Space Network Logo" class="logo-image">
+                <h1 onclick="window.location.href='../index.html'">Space Network</h1>
+            </div>
+            <div class="nav-links">
+                <a href="../model-rocket.html">Model Roketler</a>
+                <a href="../falcon9.html">Falcon 9</a>
+                <a href="../cubesat.html">CubeSat</a>
+                <a href="../satellites.html">Uydular</a>
+                <a href="../guests.html">Konuklar</a>
+            </div>
+            <div class="right-section">
+                <button class="lang-switch">EN</button>
+                <a href="../profile.html">Profil</a>
+            </div>
+            <!-- Mobil Menü -->
+            <div class="mobile-menu">
+                <a href="../model-rocket.html">Model Roketler</a>
+                <a href="../falcon9.html">Falcon 9</a>
+                <a href="../cubesat.html">CubeSat</a>
+                <a href="../satellites.html">Uydular</a>
+                <a href="../guests.html">Konuklar</a>
+                <a href="../profile.html">Profil</a>
+                <button class="lang-switch">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Konuk Detay -->
+    <div class="guest-detail">
+        <div class="guest-header">
+            <div class="guest-image" style="background-image: url('../images/akin-karahasan.jpg');"></div>
+            <div class="guest-title">
+                <h1>Akın Karahasan</h1>
+                <p>Uzay Teknolojileri Araştırmacısı</p>
+                <div class="guest-links">
+                    <a href="https://evrimagaci.org/kisi/akin-karahasan-16648" target="_blank">EVRİM AĞACI</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="guest-info">
+            <h2>Hakkında</h2>
+            <p>Uzay teknolojileri ve uydu sistemleri alanında deneyimli araştırmacı. Çeşitli uzay projeleri ve uydu sistemleri geliştirme çalışmalarında aktif rol alıyor.</p>
+        </div>
+
+        <div class="guest-info">
+            <h2>Çalışma Alanları</h2>
+            <p>- Uydu sistemleri tasarımı</p>
+            <p>- Uzay teknolojileri AR-GE</p>
+            <p>- Uzay haberleşme sistemleri</p>
+            <p>- Uydu veri analizi</p>
+            <p>- Uzay sistemleri entegrasyonu</p>
+        </div>
+
+        <div class="guest-info">
+            <h2>Projeler ve Başarılar</h2>
+            <p>Uzay teknolojileri alanında yürüttüğü projelerle sektöre önemli katkılar sağlıyor. Uydu sistemleri ve uzay haberleşmesi konularında geliştirdiği yenilikçi çözümlerle dikkat çekiyor.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Space Network</h3>
+                <p>Uzay teknolojileri hakkında her şey</p>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Email: info@spacenetwork.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sosyal Medya</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/space-network-c/posts/?feedView=all" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/space.network.c/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@space.network.c" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Space Network. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 

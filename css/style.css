@@ -1,0 +1,888 @@
+/* Global Styles */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #2d1b3d;
+    --accent-color: #6b4c8c;
+    --text-color: #FFFFFF;
+    --background-color: #000000;
+    --card-bg: rgba(45, 27, 61, 0.3);
+    --heading-font: 'Orbitron', sans-serif;
+    --body-font: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: auto;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    background: linear-gradient(45deg, var(--background-color), var(--secondary-color));
+    position: relative;
+    min-height: 100vh;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+/* Update all headings to use heading font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    letter-spacing: 1px;
+}
+
+/* Update specific text elements */
+.hero p {
+    font-family: var(--body-font);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.card p {
+    font-family: var(--body-font);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.profile-info p {
+    font-family: var(--body-font);
+    font-weight: 400;
+}
+
+.footer-section p {
+    font-family: var(--body-font);
+    font-weight: 400;
+}
+
+/* Navigation links should use heading font for consistency */
+.nav-links a {
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+
+.lang-switch {
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+
+/* Star Animation */
+body::before {
+    display: none;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(107, 76, 140, 0.3);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 2rem;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 45px;
+    width: auto;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: auto 0;
+}
+
+.logo:hover .logo-image {
+    transform: scale(1.1);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    line-height: 45px;
+    margin: auto 0;
+}
+
+.logo h1:hover {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    margin: 0 auto;
+    justify-content: center;
+    flex: 1;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    transition: left 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    transition: right 0.3s ease;
+}
+
+.nav-links a:hover::before {
+    left: 0;
+}
+
+.nav-links a:hover::after {
+    right: 0;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.lang-switch {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.lang-switch:hover {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+/* Profil butonunu sağa almak için */
+.nav-links a[href="profile.html"] {
+    margin-left: 0;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+    background: radial-gradient(circle at center, var(--secondary-color) 0%, var(--background-color) 70%);
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(107, 76, 140, 0.5);
+}
+
+.hero p {
+    font-size: 1.7rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Content Sections */
+.content-section {
+    padding: 0 5%;
+    margin-top: 80px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.content-section h1 {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin: 2rem 0 3rem 0;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(107, 76, 140, 0.5);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Card Styles */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(107, 76, 140, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(107, 76, 140, 0.2);
+    border-color: var(--accent-color);
+}
+
+.card-image {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.card p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* Profile Styles */
+.profile-container {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 80px 20px;
+}
+
+.profile-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.profile-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 20px rgba(107, 76, 140, 0.2);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-avatar {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.profile-info p {
+    margin: 0.7rem 0;
+    padding: 0.7rem;
+    background: rgba(107, 76, 140, 0.1);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.profile-info p:hover {
+    background: rgba(107, 76, 140, 0.2);
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 3rem 5%;
+    position: relative;
+    z-index: 2;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(107, 76, 140, 0.3);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    font-size: 1.3rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(107, 76, 140, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.8rem;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .hamburger-menu {
+        display: block;
+        order: 1;
+        margin-right: 0;
+    }
+
+    .logo {
+        order: 2;
+        margin: 0;
+        flex: 1;
+    }
+
+    .logo-image {
+        height: 35px;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .nav-links, .right-section {
+        display: none !important;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-section {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Particle Animation */
+.particle {
+    position: fixed;
+    pointer-events: none;
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    clip-path: polygon(50% 0%, 65% 35%, 98% 35%, 70% 57%, 79% 91%, 50% 70%, 21% 91%, 30% 57%, 2% 35%, 35% 35%);
+    background-color: rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%);
+    animation: particle-animation 2s ease-out forwards;
+    z-index: 9999;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9),
+                0 0 30px rgba(255, 255, 255, 0.5),
+                0 0 45px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes particle-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(
+            calc(-50% + var(--tx)),
+            calc(-50% + var(--ty))
+        ) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Yıldız Animasyonu için Arka Plan */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, var(--secondary-color) 0%, var(--background-color) 70%);
+    z-index: -1;
+}
+
+/* Yıldız Parçacıkları */
+.star-particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    animation: starTwinkle var(--duration, 3s) infinite;
+    opacity: var(--opacity, 0.7);
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: var(--opacity, 0.7); transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(0.5); }
+}
+
+/* Gezegen Dekorasyon Elementleri */
+.planet-decoration {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.1;
+    filter: blur(5px);
+    animation: planetRotate 20s linear infinite;
+}
+
+.planet-1 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at 30% 30%, var(--accent-color), transparent);
+    top: 10%;
+    right: -100px;
+}
+
+.planet-2 {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at 70% 70%, #4ecdc4, transparent);
+    bottom: 20%;
+    left: -75px;
+}
+
+@keyframes planetRotate {
+    0% { transform: rotate(0deg) translateX(50px); }
+    100% { transform: rotate(360deg) translateX(50px); }
+}
+
+/* Geliştirilmiş Hover Efektleri */
+.nav-links a {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: -100%;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover::before {
+    left: 0;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Özel Scroll Bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Hamburger Menü */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 15px;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+/* Mobil Menü */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: rgba(26, 26, 26, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 80px 20px 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.mobile-menu a {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 15px 10px;
+    font-size: 1.2rem;
+    font-family: var(--heading-font);
+    border-bottom: 1px solid rgba(107, 76, 140, 0.2);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    background: rgba(107, 76, 140, 0.1);
+    color: var(--accent-color);
+    padding-left: 20px;
+}
+
+/* Mobil Menü Açık Durumu */
+.mobile-menu.active {
+    left: 0;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Responsive Design - Tüm sayfalar için geçerli */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block !important;
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+        margin: 0;
+        flex: 1;
+    }
+
+    .nav-links, 
+    .right-section {
+        display: none !important;
+    }
+
+    .mobile-menu {
+        display: block !important;
+    }
+
+    .navbar {
+        display: flex !important;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.8rem;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .logo-image {
+        height: 35px;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    /* Mobil menüdeki dil değiştirme butonu için */
+    .mobile-menu .lang-switch {
+        width: 100%;
+        margin: 15px 0;
+        padding: 12px;
+        text-align: left;
+        background: transparent;
+        border: 1px solid rgba(107, 76, 140, 0.2);
+        font-size: 1.2rem;
+    }
+
+    .mobile-menu .lang-switch:hover {
+        background: rgba(107, 76, 140, 0.1);
+        border-color: var(--accent-color);
+    }
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.right-section .lang-switch {
+    margin: 0;
+}
+
+.right-section a[href="profile.html"] {
+    order: 2;
+}
+
+.right-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: var(--heading-font);
+    white-space: nowrap;
+}
+
+.right-section a:hover {
+    color: var(--accent-color);
+}
+
+.lang-switch {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    font-family: var(--heading-font);
+}
+
+.lang-switch:hover {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .logo-image {
+        height: 35px;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Guests Page Styles */
+.content-section {
+    padding: 5rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.content-section h1 {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(107, 76, 140, 0.5);
+    animation: fadeIn 1s ease-out;
+}
+
+.rocket-section {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(107, 76, 140, 0.2);
+    animation: fadeIn 1s ease-out;
+}
+
+.rocket-section h2 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(107, 76, 140, 0.3);
+}
+
+.guests-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.guest-card {
+    background: rgba(45, 27, 61, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(107, 76, 140, 0.2);
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.guest-image {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+
+.guest-info {
+    padding: 1.5rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--card-bg);
+}
+
+.guest-info h3 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+}
+
+.guest-info p {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.guest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(107, 76, 140, 0.2);
+    border-color: var(--accent-color);
+}
+
+.guest-card:hover .guest-image {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .content-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .rocket-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .guests-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .guest-card {
+        height: 300px;
+    }
+
+    .guest-image {
+        height: 200px;
+    }
+} 

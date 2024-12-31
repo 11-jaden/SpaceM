@@ -1,0 +1,116 @@
+/* Satellites Page Styles */
+.content-section {
+    padding-top: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px 50px;
+}
+
+.content-section h1 {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 15px rgba(107, 76, 140, 0.3);
+}
+
+.rocket-section {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(107, 76, 140, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rocket-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(107, 76, 140, 0.2);
+}
+
+.rocket-section h2 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.rocket-section h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.rocket-section p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.rocket-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.rocket-section ul li {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.rocket-section ul li::before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.rocket-section ul li strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.rocket-section ul ul {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .rocket-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .rocket-section {
+        padding: 1.5rem;
+    }
+}
+
+/* Animation */
+.rocket-section {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rocket-section:nth-child(1) { animation-delay: 0.1s; }
+.rocket-section:nth-child(2) { animation-delay: 0.2s; }
+.rocket-section:nth-child(3) { animation-delay: 0.3s; }
+.rocket-section:nth-child(4) { animation-delay: 0.4s; }
+.rocket-section:nth-child(5) { animation-delay: 0.5s; }
+.rocket-section:nth-child(6) { animation-delay: 0.6s; } 
